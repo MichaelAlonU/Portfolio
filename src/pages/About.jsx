@@ -69,20 +69,11 @@ export default function About() {
           {/* Frontend */}
           <div className="col-md-4" data-fade>
             <h5 className="h5 fw-semibold text-white mb-4">Frontend</h5>
-            <div>
+            <div className="skill-tags-group">
               {skillsData.frontend.map((skill) => (
-                <div key={skill.name} className="mb-3">
-                  <div className="d-flex justify-content-between align-items-center mb-2">
-                    <span className="text-secondary fw-medium">{skill.name}</span>
-                    <span className="text-navy small">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>
@@ -90,20 +81,11 @@ export default function About() {
           {/* Backend */}
           <div className="col-md-4" data-fade>
             <h5 className="h5 fw-semibold text-white mb-4">Backend</h5>
-            <div>
+            <div className="skill-tags-group">
               {skillsData.backend.map((skill) => (
-                <div key={skill.name} className="mb-3">
-                  <div className="d-flex justify-content-between align-items-center mb-2">
-                    <span className="text-secondary fw-medium">{skill.name}</span>
-                    <span className="text-navy small">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>
@@ -111,20 +93,11 @@ export default function About() {
           {/* Tools */}
           <div className="col-md-4" data-fade>
             <h5 className="h5 fw-semibold text-white mb-4">Tools & Workflow</h5>
-            <div>
+            <div className="skill-tags-group">
               {skillsData.tools.map((skill) => (
-                <div key={skill.name} className="mb-3">
-                  <div className="d-flex justify-content-between align-items-center mb-2">
-                    <span className="text-secondary fw-medium">{skill.name}</span>
-                    <span className="text-navy small">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>

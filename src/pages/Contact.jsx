@@ -30,22 +30,22 @@ export default function Contact() {
     {
       title: 'Email',
       description: 'Feel free to send me an email',
-      value: 'michael@example.com',
-      href: 'mailto:michael@example.com',
+      value: 'michaeluzan88@gmail.com',
+      href: 'mailto:michaeluzan88@gmail.com',
       icon: '📧',
     },
     {
       title: 'GitHub',
       description: 'Check out my repositories',
-      value: 'github.com/michaeluzn',
-      href: 'https://github.com/michaeluzn',
+      value: 'github.com/michaeluzan',
+      href: 'https://github.com/michaelAlonU',
       icon: '🐙',
     },
     {
       title: 'LinkedIn',
       description: 'Connect with me professionally',
       value: 'linkedin.com/in/michaeluzn',
-      href: 'https://linkedin.com/in/michaeluzn',
+      href: 'https://linkedin.com/in/michaeluzan',
       icon: '💼',
     },
   ];

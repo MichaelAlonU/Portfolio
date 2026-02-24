@@ -280,19 +280,31 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
 }
 
-/* Skill Progress Bars */
-.skill-bar {
-  height: 8px;
-  background-color: rgba(71, 85, 105, 0.3);
-  border-radius: 4px;
-  overflow: hidden;
+/* Skill Tags */
+.skill-tags-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-navy-light) 0%, var(--primary-navy) 100%);
-  border-radius: 4px;
-  transition: width 1s ease-out;
+.skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: rgba(2, 132, 199, 0.2);
+  border-color: rgba(2, 132, 199, 0.4);
+  color: var(--primary-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
 }
 
 /* Badge Styles */

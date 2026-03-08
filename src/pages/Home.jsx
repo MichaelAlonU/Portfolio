@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from '../components/ui/Button';
 import MichaelPortfolioImg from '../assets/MichaelPortfolio.jpg';
+import MichaelUzanCV from '../assets/Michael_Uzan_CV.pdf';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -76,7 +77,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                href="../assets/Michael_Uzan_CV.pdf"
+                href={MichaelUzanCV}
                 className="min-w-40"
                 download
                 style={{ minWidth: '160px', color: '#50b4bb', borderColor: '#c08415' }}

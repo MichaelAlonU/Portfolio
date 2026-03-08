@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://michaeluzan.github.io",
+  "homepage": "https://MichaelAlonU.github.io/Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

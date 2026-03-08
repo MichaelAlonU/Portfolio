@@ -2,16 +2,19 @@ import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { projectsData } from '../data/portfolio';
+import VacationView from '../assets/VacationView2.png';
+import { useState } from 'react';
 
 export default function Projects() {
   const { featured, additional } = projectsData;
+  const [showImageModal, setShowImageModal] = useState(false);
 
   return (
     <div>
       <Section 
         id="projects" 
         title="Featured Work"
-        subtitle="Projects that demonstrate full-stack capabilities"
+        subtitle="Projects that demonstrate full stack capabilities"
       >
         {/* Featured Project */}
         <div data-fade className="mb-4">
@@ -28,7 +31,7 @@ export default function Projects() {
                       Featured Project
                     </p>
                   </div>
-                  <div style={{ fontSize: '3rem', opacity: 0.1 }}>⭐</div>
+                  <div style={{ fontSize: '3rem', opacity: 0.6 }}>⭐</div>
                 </div>
 
                 <p className="fs-5 text-secondary mb-4 lh-lg">
@@ -69,8 +72,11 @@ export default function Projects() {
               {/* Project Links */}
               <div className="col-lg-4 d-flex flex-column justify-content-between">
                 <div 
+                  onClick={() => setShowImageModal(true)}
                   style={{
-                    height: '200px',
+                    maxHeight: '280px',
+                    width: '90%',
+                    aspectRatio: '1',
                     borderRadius: '8px',
                     background: 'linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%)',
                     border: '1px solid rgba(71, 85, 105, 0.3)',
@@ -78,12 +84,21 @@ export default function Projects() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '1rem',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(2, 132, 199, 0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <div>
-                    <div style={{ fontSize: '2rem' }} className="mb-2">💼</div>
-                    <p className="text-secondary small">Project Showcase</p>
+                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <img src={VacationView} alt={featured.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                   </div>
                 </div>
 
@@ -92,7 +107,8 @@ export default function Projects() {
                     variant="primary"
                     href={featured.github}
                     className="w-100 text-center"
-                    style={{ width: '100%' }}
+                    target="_blank" rel="noopener noreferrer" 
+                    style={{ width: '100%', color: 'hsla(39, 100%, 69%, 0.97)' }}
                   >
                     <svg className="icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style={{ marginRight: '0.5rem' }}>
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -100,11 +116,11 @@ export default function Projects() {
                     View Code
                   </Button>
                   <Button
-                    variant="secondary"
+                    variant="outline-primary"
                     href={featured.demo}
-                    disabled
                     className="w-100 text-center"
-                    style={{ width: '100%', opacity: 0.5, cursor: 'not-allowed' }}
+                    target="_blank" rel="noopener noreferrer"   
+                    style={{ width: '100%', color: '#50b4bb', borderColor: '#c08415'}}
                   >
                     <svg className="icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ marginRight: '0.5rem' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -175,6 +191,7 @@ export default function Projects() {
                   variant="ghost"
                   href={project.github}
                   className="w-100 text-center"
+                  target="_blank" rel="noopener noreferrer" 
                   style={{ width: '100%' }}
                 >
                   <svg className="icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style={{ marginRight: '0.5rem' }}>
@@ -206,6 +223,74 @@ export default function Projects() {
           </Button>
         </div>
       </Section>
+
+      {/* Image Modal */}
+      {showImageModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            cursor: 'pointer'
+          }}
+          onClick={() => setShowImageModal(false)}
+        >
+          <div
+            style={{
+              position: 'relative',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={VacationView}
+              alt={featured.title}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                borderRadius: '8px'
+              }}
+            />
+            <button
+              onClick={() => setShowImageModal(false)}
+              style={{
+                position: 'absolute',
+                top: '-40px',
+                right: '0',
+                background: 'rgba(255, 255, 255, 0.2)',
+                border: 'none',
+                color: 'white',
+                fontSize: '28px',
+                cursor: 'pointer',
+                padding: '0',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '4px',
+                transition: 'background 0.2s'
+              }}
+              onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'}
+              onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

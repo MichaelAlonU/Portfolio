@@ -11,20 +11,49 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Submitting form with data:", formData, "to URL:", import.meta.env.VITE_FORMSPREE_URL);
     if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }
-  };
+      setIsLoading(true);
+      try {
+        const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            ...formData,
+            subject: formData.subject || "Portfolio Contact"
+          })
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setTimeout(() => setSubmitted(false), 5000);
+        } 
+        else {
+          throw new Error("Failed to send");
+        }
+        } catch (error) {
+          alert("Oops! There was a problem submitting your form, you can also email me directly at michaeluzan88@gmail.com");
+        }
+        finally {
+          setIsLoading(false); 
+        }
+    };
+
+
+  }
 
   const contactMethods = [
     {
@@ -37,7 +66,7 @@ export default function Contact() {
     {
       title: 'GitHub',
       description: 'Check out my repositories',
-      value: 'github.com/michaeluzan',
+      value: 'github.com/michaelAlonU',
       href: 'https://github.com/michaelAlonU',
       icon: '🐙',
     },
@@ -61,24 +90,34 @@ export default function Contact() {
           {/* Contact Methods */}
           {contactMethods.map((method) => (
             <div key={method.title} className="col-lg-4 mb-4" data-fade>
-              <Card hover={true}>
-                <div style={{ fontSize: '2.5rem' }} className="mb-3">{method.icon}</div>
-                <h5 className="h5 fw-semibold text-white mb-2">
-                  {method.title}
-                </h5>
-                <p className="text-secondary small mb-3">
-                  {method.description}
-                </p>
-                <a
-                  href={method.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy text-decoration-none fw-medium"
-                  style={{ wordBreak: 'break-all' }}
-                >
-                  {method.value}
-                </a>
-              </Card>
+              <a
+                href={method.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none', display: 'block' }}
+              >
+
+                <Card hover={true}>
+                  <div style={{ fontSize: '2.5rem' }} className="mb-3">{method.icon}</div>
+
+                  <h5 className="h5 fw-semibold text-white mb-2">
+                    {method.title}
+                  </h5>
+
+                  <p className="text-secondary small mb-3">
+                    {method.description}
+                  </p>
+
+                  <span
+                    className="text-navy fw-medium"
+                    style={{ wordBreak: 'break-all' }}
+                  >
+                    {method.value}
+                  </span>
+
+                </Card>
+
+              </a>
             </div>
           ))}
         </div>
@@ -106,6 +145,11 @@ export default function Contact() {
               <form onSubmit={handleSubmit}>
                 {/* Name Field */}
                 <div className="mb-3">
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    style={{ display: "none" }}
+                  />
                   <label htmlFor="name" className="form-label small fw-medium text-white">
                     Full Name
                   </label>
@@ -118,6 +162,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Your name"
+                    autoComplete="name"
                   />
                 </div>
 
@@ -135,6 +180,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="your.email@example.com"
+                    autoComplete="email"
                   />
                 </div>
 
@@ -179,13 +225,11 @@ export default function Contact() {
                   size="lg"
                   className="w-100 text-center"
                   style={{ width: '100%' }}
+                  disabled={isLoading}
                 >
-                  Send Message
+                  {!isLoading ? `Send Message` : `Sending...`}
                 </Button>
 
-                <p className="text-secondary small text-center mt-3">
-                  This is a frontend-only form. In production, connect to a backend service.
-                </p>
               </form>
             )}
           </Card>

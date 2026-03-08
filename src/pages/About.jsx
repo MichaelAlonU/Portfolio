@@ -14,10 +14,10 @@ export default function About() {
         <div className="row mb-4">
           <div className="col-lg-8" data-fade>
             <h3 className="h4 fw-semibold text-white mb-3">Professional Summary</h3>
-            <p className="fs-5 text-secondary mb-3 lh-lg">
+            <p className="fs-5 text-orange mb-3 lh-lg ">
               {aboutContent.intro}
             </p>
-            <p className="fs-5 text-secondary mb-3 lh-lg">
+            <p className="fs-5 text-secondary mb-3 lh-lg pre-line">
               {aboutContent.journey}
             </p>
 
@@ -25,7 +25,7 @@ export default function About() {
             <ul className="list-unstyled">
               {aboutContent.focus.map((item, idx) => (
                 <li key={idx} className="d-flex gap-2 text-secondary mb-2">
-                  <span className="text-navy fw-bold flex-shrink-0">→</span>
+                  <span className="text-orange fw-bold flex-shrink-0">→</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -37,19 +37,19 @@ export default function About() {
               <h5 className="h5 fw-semibold text-white mb-4">Quick Bio</h5>
               <dl className="small">
                 <div className="mb-3">
-                  <dt className="text-navy fw-medium">Location</dt>
+                  <dt className="text-navy-light fw-medium">Location</dt>
                   <dd className="text-secondary">Israel</dd>
                 </div>
                 <div className="mb-3">
-                  <dt className="text-navy fw-medium">Education</dt>
-                  <dd className="text-secondary">Node.js Intensive Program</dd>
+                  <dt className="text-navy-light fw-medium">Education</dt>
+                  <dd className="text-secondary">John Bryce Training <br/> <span className="text-light opacity-90 small">Full-Stack & Generative AI Intensive Program</span></dd>
                 </div>
                 <div className="mb-3">
-                  <dt className="text-navy fw-medium">Primary Stack</dt>
-                  <dd className="text-secondary">MERN (MySQL variant)</dd>
+                  <dt className="text-navy-light fw-medium">Primary Stack</dt>
+                  <dd className="text-secondary">React · Node.js · Express · MySQL</dd>
                 </div>
                 <div>
-                  <dt className="text-navy fw-medium">Open To</dt>
+                  <dt className="text-navy-light fw-medium">Open To</dt>
                   <dd className="text-secondary">Full-time roles & freelance projects</dd>
                 </div>
               </dl>
@@ -71,7 +71,7 @@ export default function About() {
             <h5 className="h5 fw-semibold text-white mb-4">Frontend</h5>
             <div className="skill-tags-group">
               {skillsData.frontend.map((skill) => (
-                <span key={skill.name} className="skill-tag">
+                <span key={skill.name} className="skill-tag text-orange">
                   {skill.name}
                 </span>
               ))}
@@ -83,7 +83,7 @@ export default function About() {
             <h5 className="h5 fw-semibold text-white mb-4">Backend</h5>
             <div className="skill-tags-group">
               {skillsData.backend.map((skill) => (
-                <span key={skill.name} className="skill-tag">
+                <span key={skill.name} className="skill-tag text-orange">
                   {skill.name}
                 </span>
               ))}
@@ -95,51 +95,12 @@ export default function About() {
             <h5 className="h5 fw-semibold text-white mb-4">Tools & Workflow</h5>
             <div className="skill-tags-group">
               {skillsData.tools.map((skill) => (
-                <span key={skill.name} className="skill-tag">
+                <span key={skill.name} className="skill-tag text-orange">
                   {skill.name}
                 </span>
               ))}
             </div>
           </div>
-        </div>
-      </Section>
-
-      {/* Values Section */}
-      <Section 
-        title="Core Values"
-        subtitle="Principles that guide my development"
-      >
-        <div className="row">
-          {[
-            {
-              title: 'Clean Code',
-              description: 'Writing readable, maintainable code following SOLID principles',
-              icon: '✓',
-            },
-            {
-              title: 'Performance',
-              description: 'Building fast, efficient applications optimized for users',
-              icon: '⚡',
-            },
-            {
-              title: 'Security',
-              description: 'Implementing proper authentication and data protection',
-              icon: '🔒',
-            },
-            {
-              title: 'Documentation',
-              description: 'Clear code comments and comprehensive API documentation',
-              icon: '📝',
-            },
-          ].map((value) => (
-            <div key={value.title} className="col-md-6 col-lg-3 mb-3" data-fade>
-              <Card>
-                <div style={{ fontSize: '2rem' }} className="mb-3">{value.icon}</div>
-                <h5 className="h5 fw-semibold text-white mb-2">{value.title}</h5>
-                <p className="text-secondary small">{value.description}</p>
-              </Card>
-            </div>
-          ))}
         </div>
       </Section>
     </div>

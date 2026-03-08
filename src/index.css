@@ -18,6 +18,14 @@
   --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
+/* Override Bootstrap secondary text color */
+.text-secondary {
+  color: #cbd5e1 !important;
+}
+
+.text-orange {
+  color: hsla(39, 100%, 69%, 0.95) !important;
+}
 /* Base Styles */
 html {
   scroll-behavior: smooth;
@@ -109,6 +117,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+.pre-line {
+  white-space: pre-line;
+}
 .btn-outline-navy:hover {
   background-color: var(--primary-navy);
   color: white;
@@ -154,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-  color: var(--text-secondary) !important;
+  color: hsla(39, 100%, 69%, 0.95) !important;;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -233,7 +244,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-image img {
   border-radius: 12px;
   object-fit: cover;
-  
+
+  max-width: 750px;
+  max-height: 600px;
 }
 
 .hero-bg-decoration {
@@ -376,6 +389,15 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 80vh;
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
   }
 
   h1 {

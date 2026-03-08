@@ -17,10 +17,10 @@ export default function Footer() {
           <div className="col-md-4 mb-4 mb-md-0">
             <h4 className="small fw-semibold text-white text-uppercase mb-3">Links</h4>
             <ul className="list-unstyled">
-              <li><a href="#/" className="text-secondary text-decoration-none small">Home</a></li>
-              <li><a href="#/about" className="text-secondary text-decoration-none small">About</a></li>
-              <li><a href="#/projects" className="text-secondary text-decoration-none small">Projects</a></li>
-              <li><a href="#/contact" className="text-secondary text-decoration-none small">Contact</a></li>
+              <li><a href="#/" className="text-orange text-decoration-none small">Home</a></li>
+              <li><a href="#/about" className="text-orange text-decoration-none small">About</a></li>
+              <li><a href="#/projects" className="text-orange text-decoration-none small">Projects</a></li>
+              <li><a href="#/contact" className="text-orange text-decoration-none small">Contact</a></li>
             </ul>
           </div>
 
@@ -29,7 +29,7 @@ export default function Footer() {
             <h4 className="small fw-semibold text-white text-uppercase mb-3">Connect</h4>
             <div className="d-flex gap-3">
               <a
-                href="https://github.com/michaeluzn"
+                href="https://github.com/MichaelAlonU"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary text-decoration-none"
@@ -40,7 +40,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/michaeluzn"
+                href="https://linkedin.com/in/michaeluzan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary text-decoration-none"
@@ -51,7 +51,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:michael@example.com"
+                href="mailto:michaeluzan88@example.com"
                 className="text-secondary text-decoration-none"
                 aria-label="Email"
               >

@@ -33,7 +33,9 @@ export default function Navbar() {
           className="navbar-brand"
           aria-label="Michael Uzan - Portfolio"
         >
-          <span className="text-navy">U</span>zan
+            <h3 className="h5 fw-bold text-white mb-2">
+              <span className="text-navy">U</span>zan
+            </h3>
         </Link>
 
         <button 

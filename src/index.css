@@ -223,6 +223,19 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  z-index: 1;
+}
+
+.hero-image img {
+  border-radius: 12px;
+  object-fit: cover;
+  
+}
+
 .hero-bg-decoration {
   position: absolute;
   border-radius: 50%;

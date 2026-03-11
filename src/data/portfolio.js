@@ -77,8 +77,6 @@ export const skillsData = {
 
 export const aboutContent = {
   intro: 'Full Stack Developer with a strong backend focus, building web applications primarily with Node.js, Express, and MySQL.',
-  // intro: 'Full Stack Developer with a strong backend focus, building systems primarily with Node.js, Express, and MySQL. Recently completed an intensive Full Stack & Generative AI program focused on clean architecture and best practices.',
-  // journey: 'My development journey has focused on learning how to build systems that are clear, maintainable, and built to last. I care about writing readable code, keeping responsibilities well separated, and creating user experiences that feel natural and simple.',
   journey: 'Experienced in designing REST APIs, implementing authentication and authorization flows, and structuring applications with clear separation of concerns. Recently completed an intensive full stack training program with exposure to clean architecture principles and generative AI integration. \n I approach development with an emphasis on maintainability, readability, and long term scalability, with a growing interest in backend architecture and system design.',
   focus: [
     'Deepening backend architecture and system design understanding',

@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -239,13 +239,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 3rem;
   z-index: 1;
+  /* width: 100%;
+  max-width: 100%; */
 }
 
 .hero-image img {
   border-radius: 12px;
   object-fit: cover;
-
+  width: 100%;
   max-width: 750px;
+  height: auto;
   max-height: 600px;
 }
 
@@ -279,6 +282,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 10;
   text-align: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
 }
 
 .gradient-text {
@@ -406,6 +414,14 @@ h1, h2, h3, h4, h5, h6 {
 
   h2 {
     font-size: 1.75rem !important;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
   }
 
   .hero-bg-decoration-1,

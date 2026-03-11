@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Button from '../components/ui/Button';
 import MichaelPortfolioImg from '../assets/MichaelPortfolio.jpg';
-import MichaelUzanCV from '../assets/Michael_Uzan_CV.pdf';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,7 +25,7 @@ export default function Home() {
             opacity: isLoaded ? 1 : 0,
             transform: isLoaded ? 'translateY(0)' : 'translateY(2rem)'
           }}>
-            <h1 className="display-3 fw-bold text-white mb-3" style={{ fontSize: '4rem', lineHeight: '1.1' }}>
+            <h1 className="hero-title display-3 fw-bold text-white mb-3">
               Hi, I'm <span className="gradient-text">Michael</span>
             </h1>
             
@@ -47,8 +46,6 @@ export default function Home() {
             </div>
             <br></br>
             <p className="fs-5 text-secondary" style={{ maxWidth: '600px', margin: '0 auto 2rem', direction: 'rtl', textAlign: 'right' }}>
-{/* Junior Backend-Focused Full-Stack Developer with strong analytical thinking and a passion for building real-world systems. Fast learner, problem-solver, and highly motivated to grow within a professional engineering team.            */}
-{/* אני מפתח ג'וניור סקרן שנהנה לבנות מערכות Web ולפתור בעיות. אני חושב בצורה מסודרת, אוהב ללמוד דברים חדשים. מחפש הזדמנות להשתלב בצוות פיתוח מקצועי שבו אוכל לתרום, ללמוד ולהתפתח לאורך זמן. */}
               אני מפתח Web בתחילת הדרך, עם משיכה לעבודה בצד ה-Backend
               ולבניית מערכות מסודרות וברורות. <br/>
                חשוב לי להבין לעומק איך דברים עובדים — ולא רק לגרום להם לעבוד. אני לומד מהר, חושב מסודר, משקיע בקוד נקי ותחזוקתי, ומחפש מקום שבו אוכל להתפתח דרך עשייה אמיתית ועבודה בצוות מקצועי.
@@ -77,7 +74,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                href={MichaelUzanCV}
+                href="Michael_Uzan_Backend_Developer.pdf"
                 className="min-w-40"
                 download
                 style={{ minWidth: '160px', color: '#50b4bb', borderColor: '#c08415' }}
@@ -101,9 +98,6 @@ export default function Home() {
             opacity: isLoaded ? 1 : 0,
             animation: 'bounce 2s infinite'
           }}>
-            <svg className="w-6 h-6 text-secondary" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
           </div>
         </div>
         </div>

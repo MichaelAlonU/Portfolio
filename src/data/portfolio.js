@@ -18,6 +18,20 @@ export const projectsData = {
   additional: [
     {
       id: 2,
+      title: 'Multi Provider AI Gateway',
+      description: `Backend-focused system that routes queries across multiple AI providers with fallback, caching, and latency tracking.`,
+      technologies: [`Python`, `FastAPI`, `Rest APIs`, `JavaScript`, `HTML / CSS`],
+      github: 'https://github.com/MichaelAlonU/Multi-Provider-AI-Gateway',
+      features: [
+        'Multi-provider AI integration (Gemini, Groq, HuggingFace)',
+        'Automatic fallback handling on provider failure',
+        'In-memory caching to reduce repeated requests',
+        'Latency tracking per request ',
+        'IP-based rate limiting',
+      ],
+    },
+    {
+      id: 3,
       title: 'Car ML System',
       description: `An interactive web application that predicts used car prices using machine learning.
                     Users can submit corrections to improve the dataset and retrain the model, demonstrating a complete ML feedback loop.`,
@@ -30,7 +44,7 @@ export const projectsData = {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: 'RAG Support Bot',
       description: 'An AI-powered support bot that utilizes Retrieval-Augmented Generation (RAG) to provide accurate and contextually relevant responses to user queries.',
       technologies: ['React', 'Node.js', 'Python', 'Express'],

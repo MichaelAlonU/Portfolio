@@ -74,7 +74,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                href="Michael_Uzan_Backend_Developer.pdf"
+                href="Michael_Uzan_Resume.pdf"
                 className="min-w-40"
                 download
                 style={{ minWidth: '160px', color: '#50b4bb', borderColor: '#c08415' }}
